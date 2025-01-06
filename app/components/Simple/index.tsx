@@ -54,7 +54,7 @@ const HomePage = () => {
                 Recent Updates and News 📢
                 </h3>
                 <p className="text-bluish md:text-lg font-normal leading-8">
-                 Take a Peek on what's happening at Alphagrep Recently.
+                 Take a Peek on what&apos;s happening at Alphagrep Recently.
                 </p>
                 <section
                   className="max-w-screen-xl xl:max-w-screen-2xl mx-2 sm:mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-6 pb-20 sm:py-8 rounded-[2.25rem] sm:rounded-xl shadow-lg sm:shadow-md mt-10 mb-20 section-transition"
