@@ -77,15 +77,15 @@ const Navbar = () => {
           />
           <button
             type="submit"
-            className="px-5 py-2 bg-black text-black font-semibold  uppercase rounded-full hover:bg-gray-800 hover:shadow-md focus:outline-none focus:ring-2 transition-all duration-300"
+            className="px-5 py-2 bg-[rgb(221,255,0)] text-black font-semibold  uppercase rounded-full hover:bg-gray-800 hover:shadow-md focus:outline-none focus:ring-2 transition-all duration-300"
           >
             <span
-              className={cn(
-                `inline bg-gradient-to-r from-[#d4b0ff] via-[#a0c4ff] to-[#d4b0ff] bg-clip-text text-transparent leading-none`
-              )}
-            >
-              Search
-            </span>
+  className={cn(
+    `inline  text-black leading-none`
+  )}
+>
+  Search
+</span>
           </button>
         </form>
 

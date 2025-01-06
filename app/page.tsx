@@ -24,9 +24,9 @@ export default function Home() {
       <Separator />
       <Work />
       <Simple />
-      <Features />
+      {/* <Features />
 
-      <Trade />
+      <Trade /> */}
       <Faq />
     </main>
   );

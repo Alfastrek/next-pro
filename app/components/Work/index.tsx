@@ -13,7 +13,7 @@ interface WorkData {
   subheading: string;
 }
 
-const preTradeWorkData: WorkData[] = [
+const AllWorkData: WorkData[] = [
   {
     imgSrc: "/images/Work/icon-one.svg",
     heading: "Create Account",
@@ -120,7 +120,7 @@ const Work = () => {
       <div className="mx-auto max-w-10xl mt-16 px-6 mb-20 relative">
         <div className="radial-bgone hidden lg:block"></div>
         <div className="text-center mb-14">
-          <h3 className="text-offwhite text-3xl md:text-5xl font-bold mb-3">
+          <h3 className="text-neon-yellow text-3xl md:text-5xl font-bold mb-3">
           Trading Tools 🛠️
           </h3>
           <p className="text-bluish md:text-lg font-normal leading-8">
@@ -128,18 +128,21 @@ const Work = () => {
           </p>
         </div>
         <Tabs
-          defaultValue="Pre-Trade"
+          defaultValue="All"
           className="w-full md:w-19/20 lg:w-23/24 p-4 md:p-6 lg:p-8 mb-10"
         >
-          <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="Pre-Trade">Pre-Trade</TabsTrigger>
-            <TabsTrigger value="During-Trade">During-Trade</TabsTrigger>
-            <TabsTrigger value="Post-Trade">Post-Trade</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-6 mb-8">
+            <TabsTrigger value="All">All</TabsTrigger>
+            <TabsTrigger value="For Traders">For Traders</TabsTrigger>
+            <TabsTrigger value="For BD">For BD</TabsTrigger>
+            <TabsTrigger value="For BO">For BO</TabsTrigger>
+            <TabsTrigger value="For DevOps">For DevOps</TabsTrigger>
+            <TabsTrigger value="For Management">For Management</TabsTrigger>
           </TabsList>
-          <TabsContent value="Pre-Trade">
+          <TabsContent value="All">
             <Card className="w-full md:w-19/20 lg:w-23/24 p-4 md:p-6 lg:p-8 mb-10">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-5 mt-16">
-                {preTradeWorkData.map((item, i) => (
+                {AllWorkData.map((item, i) => (
                   <div className="card-b p-8" key={i}>
                     <div className="work-img-bg rounded-full flex justify-center absolute p-6">
                       <Image

@@ -54,7 +54,7 @@ export const TypewriterEffect = ({
                 <motion.span
                   initial={{}}
                   key={`char-${index}`}
-                  className={cn(`text-white opacity-0 hidden`, word.className)}
+                  className={cn(`text-shite-gradient opacity-0 hidden`, word.className)}
                 >
                   {char}
                 </motion.span>
@@ -123,7 +123,7 @@ export const TypewriterEffectSmooth = ({
               {word.text.map((char, index) => (
                 <span
                   key={`char-${index}`}
-                  className={cn(`text-white  `, word.className)}
+                  className={cn(`text-shite-gradient  `, word.className)}
                 >
                   {char}
                 </span>

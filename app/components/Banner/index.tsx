@@ -42,8 +42,8 @@ const Banner = () => {
         videoId="1YyAzVmP9xQ"
         onClose={() => setOpen(false)}
       /> */}
-
-<div className="mx-auto max-w-screen-2xl pt-24 lg:pt-48 sm:pb-32 px-4 md:px-8 overflow-x-hidden">
+{/* <div className="mx-auto max-w-screen-2xl pt-24 lg:pt-48 sm:pb-32 px-4 md:px-8 pl-6 overflow-x-hidden"> */}
+<div className="mx-auto max-w-7xl pt-24 lg:pt-48 sm:pb-32 px-8">
         <div className="height-work">
           <div className="grid grid-cols-1 lg:grid-cols-12 my-24 gap-8">
             <div className="arrowTwo"></div>
