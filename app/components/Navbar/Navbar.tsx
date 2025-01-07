@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Button } from "@/app/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { Button } from '@/app/components/ui/button';
+import { ChevronDown } from 'lucide-react';
 // import AnimatedGradientText from "@/app/components/ui/animated-gradient-text";
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,24 +16,24 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/app/components/ui/dropdown-menu";
+} from '@/app/components/ui/dropdown-menu';
 
 const Navbar = () => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [currentPlaceholder, setCurrentPlaceholder] =
-    useState("Search data...");
+    useState('Search data...');
   const placeholders = [
-    "Search data...",
-    "RMS GUI",
-    "InfraGUI",
+    'Search data...',
+    'RMS GUI',
+    'InfraGUI',
     "Today's PnL",
-    "Fees",
-    "Exchanges in AlphaGrep",
-    "My Machines",
-    "Leased Lines",
-    "Running Apps",
-    "Need MFT data?",
-    "Need HFT data?",
+    'Fees',
+    'Exchanges in AlphaGrep',
+    'My Machines',
+    'Leased Lines',
+    'Running Apps',
+    'Need MFT data?',
+    'Need HFT data?',
   ];
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Navbar = () => {
   const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle search logic here
-    console.log("Search query:", searchQuery);
+    console.log('Search query:', searchQuery);
   };
 
   return (
@@ -60,9 +60,8 @@ const Navbar = () => {
       <div className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
         {/* Logo (Text) */}
         <span className="text-3xl font-bold text-white tracking-wide ">
-        <span className={"glow"}>
-  One UI</span>
-</span>
+          <span className={'glow'}>One UI</span>
+        </span>
 
         {/* Search Bar */}
         <form
@@ -74,20 +73,14 @@ const Navbar = () => {
             value={searchQuery}
             onChange={handleSearchChange}
             placeholder={currentPlaceholder}
-            className="flex-grow bg-transparent text-white placeholder-gray-400 px-4 py-2 outline-none"
+            className="flex-grow bg-transparent text-white placeholder-gray-400 px-2 py-2 outline-none"
           />
-          <button
+          <Button
             type="submit"
-            className="px-5 py-2 bg-[rgb(221,255,0)] text-black font-semibold  uppercase rounded-full hover:bg-gray-800 hover:shadow-md focus:outline-none focus:ring-2 transition-all duration-300"
+            className="px-6 py-2 bg-[rgb(221,255,0)] text-black font-semibold uppercase rounded-full hover:bg-gray-800 hover:shadow-md focus:outline-none focus:ring-2 transition-all duration-300"
           >
-            <span
-  className={cn(
-    `inline  text-black leading-none`
-  )}
->
-  Search
-</span>
-          </button>
+            <span className={cn(`inline text-black leading-none`)}>Search</span>
+          </Button>
         </form>
 
         {/* Dropdown Menu */}
@@ -96,7 +89,7 @@ const Navbar = () => {
             <Button variant="outline" size="lg">
               <ChevronDown
                 className="text-black"
-                style={{ width: "26px", height: "26px" }}
+                style={{ width: '26px', height: '26px' }}
               />
             </Button>
           </DropdownMenuTrigger>

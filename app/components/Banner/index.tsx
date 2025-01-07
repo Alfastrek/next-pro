@@ -1,24 +1,25 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import InteractiveHoverButton from "../ui/interactive-hover-button";
-import { AnimatedBeamDemo } from "@/app/components/ui/animated-beam-multiple";
-import BoxReveal from "../ui/box-reveal";
+'use client';
+import React, { useState, useEffect } from 'react';
+import InteractiveHoverButton from '../ui/interactive-hover-button';
+import { AnimatedBeamDemo } from '@/app/components/ui/animated-beam-multiple';
+import BoxReveal from '../ui/box-reveal';
 
 const Banner = () => {
-  const words =  [
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const words = [
     'Traders ',
     'Management ',
     'Business Development ',
     'Data',
     'DevOps ',
-    'Everyone'
+    'Everyone',
   ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
 
-  const typingSpeed =70; // Typing speed (ms)
+  const typingSpeed = 70; // Typing speed (ms)
   const deletingSpeed = 50; // Deleting speed (ms)
   const delayBetweenWords = 2000; // Delay before switching words (ms)
 
@@ -63,48 +64,46 @@ const Banner = () => {
             <div className="arrowTwo"></div>
             <div className="col-span-8 max-w-2xl relative z-50 -ml-4">
               <h1 className="text-blue-white text-4xl md:text-5xl font-bold">
-              {/* <span style={{ color: 'rgb(221, 255, 0)' }}> */}
-              <span style={{ color: '#00BFFF' }}>
-  For
-</span>&nbsp;
+                {/* <span style={{ color: 'rgb(221, 255, 0)' }}> */}
+                <span style={{ color: '#00BFFF' }}>For</span>&nbsp;
                 {displayedText}
                 <span className="typed-cursor">|</span>
               </h1>
-              <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+              <BoxReveal boxColor={'#5046e6'} duration={0.5}>
                 <h3 className="text-xl font-semibold uppercase tracking-wide fade-in my-2 mt-5">
                   <span
                     style={{
-                      backgroundColor: "#ffffff",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
+                      backgroundColor: '#ffffff',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
                     }}
                   >
                     One
-                  </span>{" "}
+                  </span>{' '}
                   <span
                     style={{
-                      backgroundColor: "#00BFFF",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
+                      backgroundColor: '#00BFFF',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
                     }}
                   >
                     Alphagrep
-                  </span>{" "}
-                  :{" "}
+                  </span>{' '}
+                  :{' '}
                   <span
                     style={{
-                      backgroundColor: "#ffffff",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
+                      backgroundColor: '#ffffff',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
                     }}
                   >
                     One
-                  </span>{" "}
+                  </span>{' '}
                   <span
                     style={{
-                      backgroundColor: "#00BFFF",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
+                      backgroundColor: '#00BFFF',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
                     }}
                   >
                     Platform

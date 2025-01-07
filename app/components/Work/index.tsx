@@ -1,29 +1,41 @@
-"use client";
-import Image from "next/image";
-import { Card } from "@/app/components/ui/card copy";
-import React, { lazy, Suspense } from "react";
+'use client';
+import Image from 'next/image';
+import { Card } from '@/app/components/ui/card-tools';
+import React, { lazy, Suspense } from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import Favorite from '@mui/icons-material/Favorite';
-
+import { cn } from '@/lib/utils';
+import { DotPattern } from '@/app/components/ui/dot-pattern';
 
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/app/components/ui/tabs";
-import { Tool, Category, TABS, toolsData, getToolsByCategory, groupIcons } from "@/lib/WorkData";
-import { TracingBeam } from "../ui/tracing-beam";
+} from '@/app/components/ui/tabs';
+import {
+  Tool,
+  Category,
+  TABS,
+  toolsData,
+  getToolsByCategory,
+  groupIcons,
+} from '@/lib/WorkData';
+import { TracingBeam } from '../ui/tracing-beam';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faClock, faExternalLink, faFileAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowRight,
+  faClock,
+  faExternalLink,
+  faFileAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { Button } from "@/app/components/ui/button";
-import "@/app/styles/nftcard.scss";
-import { pink } from "@mui/material/colors";
+import { Button } from '@/app/components/ui/button';
+import '@/app/styles/nftcard.scss';
+import { pink } from '@mui/material/colors';
 
 const TradingTools = () => {
-
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   const checkboxStyles = {
@@ -62,62 +74,136 @@ const TradingTools = () => {
 
           {TABS.map((tab) => (
             <TabsContent key={tab.value} value={tab.value}>
-              <Card className="w-full md:w-19/20 lg:w-23/24 p-4 md:p-6 lg:p-8 mb-10">
-                <TracingBeam>
+              <div className="relative">
+                <DotPattern
+                  className={cn(
+                    '[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]',
+                    'absolute inset-2'
+                  )}
+                />
+                <Card className="w-full md:w-19/20 lg:w-23/24 p-4 md:p-6 lg:p-8 mb-10">
+                  <div className="scrollable-container">
+                    <TracingBeam>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-5  gap-x-4 mt-5">
+                        {getToolsByCategory(
+                          tab.value as Category,
+                          toolsData
+                        ).map((tool, i) => (
+                          <div
+                            className="nft p-2"
+                            key={i}
+                            style={{
+                              // backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url(${tool.imgSrc})`,
+                              backgroundSize: 'cover',
+                              backgroundPosition: 'center',
+                              backgroundRepeat: 'no-repeat',
+                              borderRadius: '8px',
+                              backdropFilter: 'blur(20px)',
+                              WebkitBackdropFilter: 'blur(10px)',
+                              boxShadow: '0 7px 20px 5px #00000088',
+                              border: '1px solid rgba(255, 255, 255, 0.2)',
+                            }}
+                          >
+                            <div className="main">
+                              {/* <Image
+                              className="tokenImage rounded-md"
+                              src={tool.imgSrc}
+                              alt={tool.heading}
+                              width={500} // Adjust width as needed
+                              height={500} // Adjust height as needed
+                            /> */}
+                              <h2 className="text-xl font-bold text-white mt-4 h-12 text-center mb-5">
+                                {tool.heading}
+                              </h2>
+                              <p className="description text-gray-400 mt-5 h-20 text-center">
+                                {tool.subheading}
+                              </p>
+                              <div className="tokenInfo flex justify-between items-center mt-4">
+                                <div className="flex items-center">
+                                  <FontAwesomeIcon
+                                    icon={
+                                      groupIcons[
+                                        tool.group
+                                          .groupName as keyof typeof groupIcons
+                                      ]
+                                    }
+                                    className="text-lg mb-2 ml-1 text-neon-yellow"
+                                  />
+                                  <span className="text-sm  mb-2 ml-1 text-neon-yellow">
+                                    {tool.group.groupName.split(' ')[0]}
+                                  </span>
+                                </div>
+                                <div
+                                  style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0px',
+                                  }}
+                                >
+                                  <Checkbox
+                                    {...label}
+                                    icon={<FavoriteBorder />}
+                                    checkedIcon={<Favorite />}
+                                    sx={checkboxStyles}
+                                  />
+                                  <span
+                                    className="text-md"
+                                    style={{ fontWeight: 'bold' }}
+                                  >
+                                    {tool.likeCount}
+                                  </span>
+                                </div>
+                              </div>
+                              <hr className="my-4 border-gray-700" />
+                              <div className="creator flex items-center space-x-4"></div>
+                              {tool.buttonText &&
+                                tool.buttonLink &&
+                                tool.documentLink && (
+                                  <div className="text-center ">
+                                    <Button
+                                      variant="outline"
+                                      size="icon"
+                                      className="inline-block px-2 py-2 text-sm font-medium text-black bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+                                    >
+                                      <Link
+                                        href={tool.buttonLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        <FontAwesomeIcon icon={faFileAlt} />
+                                      </Link>
+                                    </Button>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-y-10 gap-x-2 mt-10">
-                    {getToolsByCategory(tab.value as Category, toolsData).map((tool, i) => (
-                      <div className="nft p-2" key={i}>
-                        <div className="main">
-                          <img
-                            className="tokenImage rounded-md"
-                            src={tool.imgSrc}
-                            alt={tool.heading}
-                          />
-                          <h2 className="text-xl font-bold text-white mt-4 h-12 text-center mb-5">
-                            {tool.heading}
-                          </h2>
-                          <p className="description text-gray-400 mt-5 h-20 text-center">
-                            {tool.subheading}
-                          </p>
-                          <div className="tokenInfo flex justify-between items-center mt-4">
-                            <div className="flex items-center">
-                              <FontAwesomeIcon icon={groupIcons[tool.group.groupName as keyof typeof groupIcons]} className="text-lg mb-2 ml-1 text-neon-yellow" />
-                              <span className="text-sm  mb-2 ml-1 text-neon-yellow">{tool.group.groupName.split(' ')[0]}</span>
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0px' }}>
-                              <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} sx={checkboxStyles} />
-                              <span className="text-md" style={{ fontWeight: 'bold' }}>{tool.likeCount}</span>
+                                    <Button
+                                      variant="outline"
+                                      size="lg"
+                                      className="inline-block px-2 py-2 text-sm font-medium text-black bg-blue-600 rounded-md hover:bg-blue-700 transition-colors ml-4"
+                                    >
+                                      <Link
+                                        href={tool.documentLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                      >
+                                        {tool.buttonText}{' '}
+                                        <FontAwesomeIcon
+                                          icon={faArrowRight}
+                                          className="ml-1"
+                                        />
+                                      </Link>
+                                    </Button>
+                                  </div>
+                                )}
                             </div>
                           </div>
-                          <hr className="my-4 border-gray-700" />
-                          <div className="creator flex items-center space-x-4">
-                          </div>
-                          {tool.buttonText && tool.buttonLink && tool.documentLink && (
-                            <div className="text-center ">
-                              <Button variant="outline" size="icon" className="inline-block px-2 py-2 text-sm font-medium text-black bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">
-                                <Link href={tool.buttonLink} target="_blank" rel="noopener noreferrer">
-                                  <FontAwesomeIcon icon={faFileAlt} />
-                                </Link>
-                              </Button>
-
-                              <Button variant="outline" size="lg" className="inline-block px-2 py-2 text-sm font-medium text-black bg-blue-600 rounded-md hover:bg-blue-700 transition-colors ml-4">
-                                <Link href={tool.documentLink} target="_blank" rel="noopener noreferrer">
-                                  {tool.buttonText} <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
-                                </Link>
-                              </Button>
-                            </div>
-                          )}
-                        </div>
+                        ))}
                       </div>
-                    ))}
+                    </TracingBeam>
                   </div>
-                </TracingBeam>
-              </Card>
+                </Card>
+              </div>
             </TabsContent>
           ))}
         </Tabs>
-
       </div>
     </div>
   );
