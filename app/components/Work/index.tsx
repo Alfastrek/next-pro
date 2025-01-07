@@ -47,7 +47,7 @@ const TradingTools = () => {
             <TabsContent key={tab.value} value={tab.value}>
               <Card className="w-full md:w-19/20 lg:w-23/24 p-4 md:p-6 lg:p-8 mb-10">
               <TracingBeam>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-5 mt-110">
+                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-y-20 gap-x-5 mt-110">
                   {getToolsByCategory(tab.value as Category, toolsData).map((tool, i) => (
                     <div className="card-b p-8" key={i}>
                       <div className="work-img-bg rounded-full flex justify-center absolute p-6">
@@ -75,13 +75,13 @@ const TradingTools = () => {
                       {tool.buttonText && tool.buttonLink && tool.documentLink &&(
                         <div className="text-center mt-4">
                          <Button variant="outline" size="lg" className="inline-block px-4 py-2 text-sm font-medium text-black bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">
-  <Link href={tool.buttonLink}>
+  <Link href={tool.buttonLink} target="_blank" rel="noopener noreferrer">
     {tool.linkbuttonText} <FontAwesomeIcon icon={faExternalLink} className="ml-2" />
   </Link>
 </Button>
 
 <Button variant="outline" size="lg" className="inline-block px-4 py-2 text-sm font-medium text-black bg-blue-600 rounded-md hover:bg-blue-700 transition-colors ml-4">
-  <Link href={tool.documentLink}>
+  <Link href={tool.documentLink} target="_blank" rel="noopener noreferrer">
     {tool.buttonText} <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
   </Link>
 </Button>

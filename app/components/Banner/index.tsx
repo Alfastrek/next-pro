@@ -63,14 +63,15 @@ const Banner = () => {
             <div className="arrowTwo"></div>
             <div className="col-span-8 max-w-2xl relative z-50 -ml-4">
               <h1 className="text-blue-white text-4xl md:text-5xl font-bold">
-              <span style={{ color: 'rgb(221, 255, 0)' }}>
+              {/* <span style={{ color: 'rgb(221, 255, 0)' }}> */}
+              <span style={{ color: '#00BFFF' }}>
   For
 </span>&nbsp;
                 {displayedText}
                 <span className="typed-cursor">|</span>
               </h1>
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                <h3 className="text-xl font-semibold uppercase tracking-wide fade-in my-2">
+                <h3 className="text-xl font-semibold uppercase tracking-wide fade-in my-2 mt-5">
                   <span
                     style={{
                       backgroundColor: "#ffffff",
