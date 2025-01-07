@@ -11,7 +11,7 @@ import {
 import { Tool, Category, TABS, toolsData, getToolsByCategory } from "@/lib/WorkData";
 import { TracingBeam } from "../ui/tracing-beam";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faExternalLink } from '@fortawesome/free-solid-svg-icons';
+import {  faArrowRight, faExternalLink } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import { Button } from "@/app/components/ui/button";
 
@@ -82,7 +82,7 @@ const TradingTools = () => {
 
 <Button variant="outline" size="lg" className="inline-block px-4 py-2 text-sm font-medium text-black bg-blue-600 rounded-md hover:bg-blue-700 transition-colors ml-4">
   <Link href={tool.documentLink}>
-    {tool.buttonText} <FontAwesomeIcon icon={faExternalLink} className="ml-2" />
+    {tool.buttonText} <FontAwesomeIcon icon={faArrowRight} className="ml-1" />
   </Link>
 </Button>
                         </div>
