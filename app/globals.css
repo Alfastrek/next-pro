@@ -390,7 +390,10 @@ th:last-child {
 .text-neon-yellow {
   color: rgb(221, 255, 0);
 }
-
+.glow {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00BFFF, 0 0 20px #00BFFF, 0 0 30px #00BFFF;
+}
 .radial-banner {
   position: absolute;
   background-color: #03050d;

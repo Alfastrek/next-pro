@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/app/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import AnimatedGradientText from "@/app/components/ui/animated-gradient-text";
+// import AnimatedGradientText from "@/app/components/ui/animated-gradient-text";
 import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
@@ -59,9 +59,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-md">
       <div className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
         {/* Logo (Text) */}
-        <span className="text-3xl font-bold text-white tracking-wide italic">
-          One <span style={{ color: "#00BFFF" }}>UI</span>
-        </span>
+        <span className="text-3xl font-bold text-white tracking-wide ">
+        <span className={"glow"}>
+  One UI</span>
+</span>
 
         {/* Search Bar */}
         <form
