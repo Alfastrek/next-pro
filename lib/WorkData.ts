@@ -1,5 +1,11 @@
 // Types
+import { faBriefcase, faChartLine, faCode, faHandshake } from '@fortawesome/free-solid-svg-icons';
+
 export interface Tool {
+  group: {
+    groupName: string;
+    icon: any;
+  };
   imgSrc: string;
   heading: string;
   subheading: string;
@@ -7,7 +13,15 @@ export interface Tool {
   buttonLink?: string;
   linkbuttonText?: string;
   documentLink?: string;
+  likeCount?: number;
 }
+
+export const groupIcons = {
+  "Traders Tools": faChartLine,
+  "Management Tools": faBriefcase,
+  "Dev Tools": faCode,
+  "BD Tools": faHandshake,
+};
 
 export type Category = 
   | "all"
@@ -69,6 +83,7 @@ export const CATEGORY_MAPPINGS: Record<Category, string[]> = {
 
 export const toolsData: Tool[] = [
   {
+    group: { groupName: "Dev Tools", icon: faCode },
     imgSrc: "/images/Work/icon-one.svg",
     heading: "RMS UI",
     subheading: "A user-friendly interface to manage risk management systems.",
@@ -76,143 +91,161 @@ export const toolsData: Tool[] = [
     buttonLink: "/rms-ui",
     linkbuttonText: "Redirect",
     documentLink: "/rms-ui-docs",
+    likeCount: 10,
   },
   {
+    group: { groupName: "Traders Tools", icon: faChartLine },
     imgSrc: "/images/Work/icon-two.svg",
     heading: "Charges UI",
     subheading: "Simplify the process of managing and viewing charges.",
     buttonText: "Learn More",
     buttonLink: "/charges-ui",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/charges-ui-docs",
+     likeCount: 10,
   },
   {
+    group: { groupName: "Traders Tools", icon: faChartLine },
     imgSrc: "/images/Work/icon-three.svg",
     heading: "AG Trades DB",
     subheading: "Centralized database for managing AG trades efficiently.",
     buttonText: "Learn More",
     buttonLink: "/ag-trades-db",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/ag-trades-db-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Dev Tools", icon: faCode },
     imgSrc: "/images/Work/icon-four.svg",
     heading: "HFT Cloud DB Management",
     subheading: "Manage high-frequency trading data in the cloud.",
     buttonText: "Learn More",
     buttonLink: "/hft-cloud-db",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/hft-cloud-db-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Dev Tools", icon: faCode },
     imgSrc: "/images/Work/icon-five.svg",
     heading: "Ag-config Management System",
     subheading: "Comprehensive tool for managing AG configurations.",
     buttonText: "Learn More",
     buttonLink: "/ag-config-management",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/ag-config-management-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Traders Tools", icon: faChartLine },
     imgSrc: "/images/Work/icon-six.svg",
     heading: "CryptoVerse",
     subheading: "Explore and trade cryptocurrencies with ease.",
     buttonText: "Learn More",
     buttonLink: "/cryptoverse",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/cryptoverse-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Management Tools", icon: faBriefcase },
     imgSrc: "/images/Work/icon-seven.svg",
     heading: "Holidays",
     subheading: "Plan trades with holiday schedules and updates.",
     buttonText: "Learn More",
     buttonLink: "/holidays",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/holidays-docs", likeCount: 10,
   },
   {
+    group: { groupName: "BD Tools", icon: faHandshake },
     imgSrc: "/images/Work/icon-eight.svg",
     heading: "Corporate Action as Service",
     subheading: "Streamline corporate actions through advanced services.",
     buttonText: "Learn More",
     buttonLink: "/corporate-actions",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/corporate-actions-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Management Tools", icon: faBriefcase },
     imgSrc: "/images/Work/icon-nine.svg",
     heading: "Trading Hours",
     subheading: "Keep track of trading hours for global markets.",
     buttonText: "Learn More",
     buttonLink: "/trading-hours",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/trading-hours-docs", likeCount: 10,
   },
-  {
+ {
+    group: { groupName: "Traders Tools", icon: faChartLine },
     imgSrc: "/images/Work/icon-ten.svg",
     heading: "Strategy Monitor",
     subheading: "Monitor and optimize trading strategies effectively.",
     buttonText: "Learn More",
     buttonLink: "/strategy-monitor",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/strategy-monitor-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Management Tools", icon: faBriefcase },
     imgSrc: "/images/Work/icon-eleven.svg",
     heading: "MIS Dashboard",
     subheading: "Access actionable insights through an advanced dashboard.",
     buttonText: "Learn More",
     buttonLink: "/mis-dashboard",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/mis-dashboard-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Dev Tools", icon: faCode },
     imgSrc: "/images/Work/icon-twelve.svg",
     heading: "Auto Binary Deployer",
     subheading: "Automate binary deployments with precision.",
     buttonText: "Learn More",
     buttonLink: "/auto-binary-deployer",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/auto-binary-deployer-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Dev Tools", icon: faCode },
     imgSrc: "/images/Work/icon-thirteen.svg",
     heading: "Alerta",
     subheading: "Real-time alert management for efficient monitoring.",
     buttonText: "Learn More",
     buttonLink: "/alerta",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/alerta-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Traders Tools", icon: faChartLine },
     imgSrc: "/images/Work/icon-fourteen.svg",
     heading: "Grafana",
     subheading: "Visualize and analyze data with advanced dashboards.",
     buttonText: "Learn More",
     buttonLink: "/grafana",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/grafana-docs", likeCount: 10,
   },
   {
+    group: { groupName: "Management Tools", icon: faBriefcase },
     imgSrc: "/images/Work/icon-fifteen.svg",
     heading: "Compliance Alpha",
     subheading: "Ensure compliance with regulatory requirements effortlessly.",
     buttonText: "Learn More",
     buttonLink: "/compliance-alpha",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/compliance-alpha-docs", likeCount: 10,
   },
   {
+    group: { groupName: "BD Tools", icon: faHandshake },
     imgSrc: "/images/Work/icon-sixteen.svg",
     heading: "Manual Trades RecordKeeper",
     subheading: "Easily manage and document manual trades.",
     buttonText: "Learn More",
     buttonLink: "/manual-trades",
     linkbuttonText: "Redirect",
-    documentLink: "/rms-ui-docs",
+    documentLink: "/manual-trades-docs", likeCount: 10,
   },
 ];
+
 
 // Helper function to filter tools by category
 export const getToolsByCategory = (category: Category, tools: Tool[]): Tool[] => {
