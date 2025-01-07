@@ -1,56 +1,76 @@
 "use client";
-import React, { useState, Suspense } from "react";
-import ModalVideo from "react-modal-video";
-// import TypingAnimation from "@/app/components/ui/typing-animation";
-import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+import React, { useState, useEffect } from "react";
 import InteractiveHoverButton from "../ui/interactive-hover-button";
 import { AnimatedBeamDemo } from "@/app/components/ui/animated-beam-multiple";
 import BoxReveal from "../ui/box-reveal";
-import { color } from "framer-motion";
-// import Ripple from "@/app/components/ui/ripple"; // This is a custom component
 
 const Banner = () => {
-  const [isOpen, setOpen] = useState(false);
-  const theme = "dark"; // Define the theme variable
-  const words = [
-    {
-      text: "Everything",
-      className: "text-blue-white",
-    },
-
-    {
-      text: "At",
-      className: "text-blue-white",
-    },
-    {
-      text: "One Place",
-      className: "text-blue-500",
-    },
-    {
-      text: ".",
-
-      className: "text-blue-500",
-    },
+  const words =  [
+    'Traders ',
+    'Management ',
+    'Business Development ',
+    'Data',
+    'DevOps ',
+    'Everyone.'
   ];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
+
+  const typingSpeed =70; // Typing speed (ms)
+  const deletingSpeed = 50; // Deleting speed (ms)
+  const delayBetweenWords = 2000; // Delay before switching words (ms)
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentWord = words[currentWordIndex];
+      if (!isDeleting) {
+        // Typing characters
+        if (charIndex < currentWord.length) {
+          setDisplayedText(currentWord.slice(0, charIndex + 1));
+          setCharIndex((prev) => prev + 1);
+        } else {
+          setTimeout(() => setIsDeleting(true), delayBetweenWords);
+        }
+      } else {
+        // Deleting characters
+        if (charIndex > 0) {
+          setDisplayedText(currentWord.slice(0, charIndex - 1));
+          setCharIndex((prev) => prev - 1);
+        } else {
+          setIsDeleting(false);
+          setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        }
+      }
+    };
+
+    const typingTimer = setTimeout(
+      handleTyping,
+      isDeleting ? deletingSpeed : typingSpeed
+    );
+
+    return () => clearTimeout(typingTimer);
+  }, [charIndex, isDeleting, currentWordIndex, words]);
+
   return (
     <div className="bg-image relative" id="home-section">
       <div className="arrowOne"></div>
       <div className="radial-banner hidden lg:block"></div>
-      {/* <ModalVideo
-        channel="youtube"
-        isOpen={isOpen}
-        videoId="1YyAzVmP9xQ"
-        onClose={() => setOpen(false)}
-      /> */}
-{/* <div className="mx-auto max-w-screen-2xl pt-24 lg:pt-48 sm:pb-32 px-4 md:px-8 pl-6 overflow-x-hidden"> */}
-<div className="mx-auto max-w-7xl pt-24 lg:pt-48 sm:pb-32 px-8">
+      <div className="mx-auto max-w-7xl pt-24 lg:pt-48 sm:pb-32 px-8">
         <div className="height-work">
           <div className="grid grid-cols-1 lg:grid-cols-12 my-24 gap-8">
             <div className="arrowTwo"></div>
             <div className="col-span-8 max-w-2xl relative z-50 -ml-4">
-              <TypewriterEffectSmooth words={words} />
+              <h1 className="text-blue-white text-4xl md:text-5xl font-bold">
+              <span style={{ color: 'rgb(221, 255, 0)' }}>
+  For
+</span>&nbsp;
+                {displayedText}
+                <span className="typed-cursor">|</span>
+              </h1>
               <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                <h3 className=" text-xl font-semibold uppercase tracking-wide fade-in my-2">
+                <h3 className="text-xl font-semibold uppercase tracking-wide fade-in my-2">
                   <span
                     style={{
                       backgroundColor: "#ffffff",
@@ -97,31 +117,10 @@ const Banner = () => {
             </div>
 
             <div className="col-span-4 lg:-m-48">
-              {/* <div className="ml-25 mt-40"> */}{" "}
-              {/* Adjust the margin as needed */}
-              {/* <div className="fade-in"> */}
               <AnimatedBeamDemo />
-              {/* </div> */}
-              {/* </div> */}
-              {/* <div className="arrowThree"></div> */}
-              {/* <div className="arrowFour"></div> */}
               <div className="arrowFive"></div>
-              <div className="relative -mt-8">
-                {" "}
-                {/* Added negative margin top */}
-                {/* <Suspense fallback={<div>Loading...</div>}>
-                  <Ripple className="absolute inset-0 z-0 fade-in" />
-                </Suspense> */}
-                {/* <Image
-                  src="/images/Banner/banner.png"
-                  alt="nothing"
-                  width={1013}
-                  height={760}
-                  className="relative z-10"
-                /> */}
-              </div>
+              <div className="relative -mt-8"></div>
               <div className="arrowSix"></div>
-              {/* <div className="arrowSeven"></div> */}
               <div className="arrowEight"></div>
             </div>
           </div>
