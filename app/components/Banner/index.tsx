@@ -11,7 +11,7 @@ const Banner = () => {
     'Business Development ',
     'Data',
     'DevOps ',
-    'Everyone.'
+    'Everyone'
   ];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
