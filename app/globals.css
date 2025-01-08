@@ -7,7 +7,7 @@
 @import 'slick-carousel/slick/slick-theme.css';
 @font-face {
   font-family: 'Parkinsons';
-  src: url('/fonts/Parkinsons.ttf') format('truetype');
+  src: url('/fonts/Parkinsans.ttf') format('truetype');
 }
 body {
   font-family: 'Parkinsans', sans-serif;
@@ -609,4 +609,20 @@ input::placeholder {
 
 .fade-in {
   animation: fadeIn 1s ease-in-out;
+}
+
+.overlay-active {
+  position: relative;
+  z-index: 1000;
+}
+
+.overlay-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 255, 0.5); /* Blue overlay */
+  z-index: -1;
 }

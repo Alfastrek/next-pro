@@ -62,7 +62,7 @@ const Banner = () => {
         <div className="height-work">
           <div className="grid grid-cols-1 lg:grid-cols-12 my-24 gap-8">
             <div className="arrowTwo"></div>
-            <div className="col-span-8 max-w-2xl relative z-50 -ml-4">
+            <div className="col-span-8 max-w-2xl relative -ml-4">
               <h1 className="text-blue-white text-4xl md:text-5xl font-bold">
                 {/* <span style={{ color: 'rgb(221, 255, 0)' }}> */}
                 <span style={{ color: '#00BFFF' }}>For</span>&nbsp;
