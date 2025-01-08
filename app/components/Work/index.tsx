@@ -112,7 +112,7 @@ const TradingTools = () => {
                               width={500} // Adjust width as needed
                               height={500} // Adjust height as needed
                             /> */}
-                              <h2 className="text-xl font-bold text-white mt-4 h-12 text-center mb-5">
+                              <h2 className="text-xl font-bold text-white mt-4 h-12 text-center mb-10">
                                 {tool.heading}
                               </h2>
                               <p className="description text-gray-400 mt-5 h-20 text-center">

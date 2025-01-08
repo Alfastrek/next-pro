@@ -128,7 +128,7 @@ export const toolsData: Tool[] = [
     buttonText: 'Learn More',
     buttonLink: 'http://devops.alpha-grep.com:5000/assets/data-access',
     linkbuttonText: 'Redirect',
-    documentLink: '/hft-cloud-db-docs',
+    documentLink: 'https://alpha-grep.atlassian.net/wiki/spaces/API/overview?homepageId=327868',
     likeCount: 10,
   },
   {
@@ -137,9 +137,9 @@ export const toolsData: Tool[] = [
     heading: 'AG-config Management System',
     subheading: 'Tool for managing AG configurations.',
     buttonText: 'Learn More',
-    buttonLink: '/ag-config-management',
+    buttonLink: 'http://devops.alpha-grep.com:5000/ag-cms/',
     linkbuttonText: 'Redirect',
-    documentLink: '/ag-config-management-docs',
+    documentLink: 'https://alpha-grep.atlassian.net/wiki/spaces/API/pages/264798255/AG+Config+Management+System',
     likeCount: 10,
   },
   {
