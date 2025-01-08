@@ -37,7 +37,20 @@ import { pink } from '@mui/material/colors';
 
 const TradingTools = () => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
+  const getIconColor = (groupName: string) => {
+    switch (groupName) {
+      case 'Traders Tools':
+        return 'text-blue-500';
+      case 'Management Tools':
+        return 'text-green-500';
+      case 'Dev Tools':
+        return 'text-red-500';
+      case 'BD Tools':
+        return 'text-purple-500';
+      default:
+        return 'text-neon-yellow';
+    }
+  };
   const checkboxStyles = {
     color: pink[800],
     '&.Mui-checked': {
