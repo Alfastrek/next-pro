@@ -170,7 +170,7 @@ const TradingTools = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                       >
-                                        <FontAwesomeIcon icon={faFileAlt} />
+                                        <FontAwesomeIcon icon={faExternalLink} />
                                       </Link>
                                     </Button>
 
