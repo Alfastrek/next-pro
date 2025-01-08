@@ -84,7 +84,7 @@ const TradingTools = () => {
                 <Card className="w-full md:w-19/20 lg:w-23/24 p-4 md:p-6 lg:p-8 mb-10">
                   <div className="scrollable-container">
                     <TracingBeam>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-54 xl:grid-cols-6  gap-x-4 mt-5">
+                      <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6  gap-x-4 mt-5">
                         {getToolsByCategory(
                           tab.value as Category,
                           toolsData
