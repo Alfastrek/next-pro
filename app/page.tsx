@@ -4,7 +4,6 @@ import Work from "./components/Work/index";
 import Features from "./components/Features/index";
 import Simple from "./components/Simple/index";
 import Trade from "./components/Trade/index";
-import Faq from "./components/Faq/index";
 import { Separator } from "./components/ui/separator";
 import "@fortawesome/fontawesome-free/css/all.css";
 
@@ -27,7 +26,6 @@ export default function Home() {
       {/* <Features />
 
       <Trade /> */}
-      <Faq />
     </main>
   );
 }

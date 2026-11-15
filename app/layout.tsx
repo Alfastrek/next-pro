@@ -1,7 +1,6 @@
 import "./globals.css";
 import "@/node_modules/react-modal-video/scss/modal-video.scss";
 import Navbar from "./components/Navbar/index";
-import Footer from "./components/Footer/index";
 import Head from "next/head";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
@@ -20,7 +19,6 @@ export default function RootLayout({
         <Navbar />
         <SpeedInsights />
         {children}
-        <Footer />
       </body>
     </html>
   );
